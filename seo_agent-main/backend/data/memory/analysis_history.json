@@ -1,0 +1,24 @@
+{
+  "https://www.instagram.com": [
+    {
+      "seo_score": 55.0,
+      "issues": [
+        "Title too short (9 chars, recommended 30-60)",
+        "Meta description too short (94 chars)",
+        "No H1 heading found",
+        "No H2 headings found",
+        "2 images missing alt text",
+        "Page size is large (562 KB)",
+        "Missing schema markup"
+      ],
+      "recommendations": [
+        "Top keywords: instagram",
+        "Add more internal links for better navigation",
+        "Add schema markup for rich snippets"
+      ],
+      "title": "Instagram",
+      "meta_description": "Create an account or log in to Instagram - Share what you're into with the people who get you.",
+      "timestamp": "2026-04-18T19:00:25.541043"
+    }
+  ]
+}

@@ -1,0 +1,675 @@
+{
+  "https://www.facebook.com": {
+    "seo": [
+      {
+        "timestamp": "2026-04-18T15:48:32.550142",
+        "rank": 37,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T15:48:45.359541",
+        "rank": 37,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T15:51:34.168100",
+        "rank": 37,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:28.902520",
+        "rank": 38,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:54.013495",
+        "rank": 38,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:30.709958",
+        "rank": 38,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:56.080412",
+        "rank": 38,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T16:05:33.692243",
+        "rank": 38,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T16:19:06.567237",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T16:24:46.071166",
+        "rank": 36,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:42:16.471476",
+        "rank": 34,
+        "search_volume": 13000
+      }
+    ],
+    "optimization": [
+      {
+        "timestamp": "2026-04-18T15:48:32.589950",
+        "rank": 24,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T15:48:45.412909",
+        "rank": 24,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T15:51:34.207232",
+        "rank": 24,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:28.935008",
+        "rank": 25,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:54.037510",
+        "rank": 25,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:30.739704",
+        "rank": 25,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:56.099596",
+        "rank": 25,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T16:05:33.702165",
+        "rank": 25,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T16:19:06.580767",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T16:24:46.105171",
+        "rank": 23,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:42:16.485300",
+        "rank": 21,
+        "search_volume": 22000
+      }
+    ],
+    "keywords": [
+      {
+        "timestamp": "2026-04-18T15:48:32.620210",
+        "rank": 20,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T15:48:45.444071",
+        "rank": 20,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T15:51:34.239971",
+        "rank": 20,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:28.954823",
+        "rank": 21,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:54.059365",
+        "rank": 21,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:30.759114",
+        "rank": 21,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:56.111160",
+        "rank": 21,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T16:05:33.712942",
+        "rank": 21,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T16:19:06.595462",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T16:24:46.134732",
+        "rank": 19,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:42:16.497540",
+        "rank": 17,
+        "search_volume": 18000
+      }
+    ],
+    "content": [
+      {
+        "timestamp": "2026-04-18T15:48:32.651979",
+        "rank": 52,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:48:45.472312",
+        "rank": 52,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:51:34.272466",
+        "rank": 52,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:28.979232",
+        "rank": 53,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:54.077760",
+        "rank": 53,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:30.776310",
+        "rank": 53,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:56.124673",
+        "rank": 53,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:05:33.725537",
+        "rank": 53,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:19:06.616584",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:24:46.165050",
+        "rank": 51,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:42:16.509138",
+        "rank": 49,
+        "search_volume": 17000
+      }
+    ],
+    "ranking": [
+      {
+        "timestamp": "2026-04-18T15:48:32.683241",
+        "rank": 43,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:48:45.497548",
+        "rank": 43,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:51:34.297111",
+        "rank": 43,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:28.998680",
+        "rank": 44,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T15:52:54.096808",
+        "rank": 44,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:30.793426",
+        "rank": 44,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:04:56.144566",
+        "rank": 44,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:05:33.736465",
+        "rank": 44,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:19:06.634777",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T16:24:46.184815",
+        "rank": 42,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:42:16.518989",
+        "rank": 40,
+        "search_volume": 17000
+      }
+    ]
+  },
+  "https://www.instagram.com": {
+    "seo": [
+      {
+        "timestamp": "2026-04-18T22:56:36.693708",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:05:32.895525",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:06:26.903901",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:15:47.767436",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:19:34.572907",
+        "rank": 38,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:22:35.213509",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:08.487127",
+        "rank": 36,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:45.361380",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:55.861861",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:14.343574",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:54.969246",
+        "rank": 35,
+        "search_volume": 13000
+      },
+      {
+        "timestamp": "2026-04-19T06:37:56.383614",
+        "rank": 38,
+        "search_volume": 13000
+      }
+    ],
+    "optimization": [
+      {
+        "timestamp": "2026-04-18T22:56:36.713671",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:05:32.915603",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:06:26.936574",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:15:47.810178",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:19:34.593849",
+        "rank": 25,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:22:35.245247",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:08.510206",
+        "rank": 23,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:45.373535",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:55.876200",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:14.355424",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:54.992280",
+        "rank": 22,
+        "search_volume": 22000
+      },
+      {
+        "timestamp": "2026-04-19T06:37:56.403536",
+        "rank": 25,
+        "search_volume": 22000
+      }
+    ],
+    "keywords": [
+      {
+        "timestamp": "2026-04-18T22:56:36.738751",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:05:32.935074",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:06:26.969862",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:15:47.838400",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:19:34.629336",
+        "rank": 21,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:22:35.272179",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:08.530700",
+        "rank": 19,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:45.380844",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:55.889407",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:14.364390",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:55.019140",
+        "rank": 18,
+        "search_volume": 18000
+      },
+      {
+        "timestamp": "2026-04-19T06:37:56.418782",
+        "rank": 21,
+        "search_volume": 18000
+      }
+    ],
+    "content": [
+      {
+        "timestamp": "2026-04-18T22:56:36.746662",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:05:32.952591",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:06:27.001762",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:15:47.864009",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:19:34.656374",
+        "rank": 53,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:22:35.307759",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:08.561085",
+        "rank": 51,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:45.388647",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:55.898183",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:14.371775",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:55.044362",
+        "rank": 50,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-19T06:37:56.433151",
+        "rank": 53,
+        "search_volume": 17000
+      }
+    ],
+    "ranking": [
+      {
+        "timestamp": "2026-04-18T22:56:36.755281",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:05:32.966643",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:06:27.030067",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:15:47.891434",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:19:34.693980",
+        "rank": 44,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:22:35.328169",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:08.569669",
+        "rank": 42,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:45.396393",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:36:55.906872",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:14.378985",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-18T23:37:55.067735",
+        "rank": 41,
+        "search_volume": 17000
+      },
+      {
+        "timestamp": "2026-04-19T06:37:56.451274",
+        "rank": 44,
+        "search_volume": 17000
+      }
+    ]
+  },
+  "https://email.com": {
+    "seo": [
+      {
+        "timestamp": "2026-04-18T23:55:03.948742",
+        "rank": 38,
+        "search_volume": 13000
+      }
+    ],
+    "optimization": [
+      {
+        "timestamp": "2026-04-18T23:55:03.960882",
+        "rank": 25,
+        "search_volume": 22000
+      }
+    ],
+    "keywords": [
+      {
+        "timestamp": "2026-04-18T23:55:03.971864",
+        "rank": 21,
+        "search_volume": 18000
+      }
+    ],
+    "content": [
+      {
+        "timestamp": "2026-04-18T23:55:03.981815",
+        "rank": 53,
+        "search_volume": 17000
+      }
+    ],
+    "ranking": [
+      {
+        "timestamp": "2026-04-18T23:55:03.990310",
+        "rank": 44,
+        "search_volume": 17000
+      }
+    ]
+  },
+  "https://www.amazon.com": {
+    "seo": [
+      {
+        "timestamp": "2026-04-19T06:45:49.707081",
+        "rank": 37,
+        "search_volume": 13000
+      }
+    ],
+    "optimization": [
+      {
+        "timestamp": "2026-04-19T06:45:49.733996",
+        "rank": 24,
+        "search_volume": 22000
+      }
+    ],
+    "keywords": [
+      {
+        "timestamp": "2026-04-19T06:45:49.758241",
+        "rank": 20,
+        "search_volume": 18000
+      }
+    ],
+    "content": [
+      {
+        "timestamp": "2026-04-19T06:45:49.779306",
+        "rank": 52,
+        "search_volume": 17000
+      }
+    ],
+    "ranking": [
+      {
+        "timestamp": "2026-04-19T06:45:49.801379",
+        "rank": 43,
+        "search_volume": 17000
+      }
+    ]
+  }
+}

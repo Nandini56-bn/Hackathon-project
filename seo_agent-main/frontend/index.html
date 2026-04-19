@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO & Citation Agent - AI-Powered SEO Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+        }
+
+        /* Results Section */
+        .results-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .score-display {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .score-details {
+            flex: 1;
+            margin-left: 30px;
+        }
+
+        .score-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .score-details strong {
+            color: #333;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Issues List */
+        .issues-list, .recommendations-list {
+            list-style: none;
+        }
+
+        .issues-list li, .recommendations-list li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            border-left: 4px solid #dc3545;
+            transition: transform 0.2s;
+        }
+
+        .recommendations-list li {
+            border-left-color: #28a745;
+        }
+
+        .issues-list li:hover, .recommendations-list li:hover {
+            transform: translateX(5px);
+            background: #f0f0f0;
+        }
+
+        .recommendation-item {
+            margin-bottom: 15px;
+        }
+
+        .recommendation-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .recommendation-source {
+            font-size: 0.9em;
+            color: #999;
+            font-style: italic;
+        }
+
+        .recommendation-type {
+            display: inline-block;
+            font-size: 0.8em;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+
+        .type-automatic {
+            background: #e7f3ff;
+            color: #0066cc;
+        }
+
+        .type-llm {
+            background: #f0e7ff;
+            color: #6000cc;
+        }
+
+        .type-learned {
+            background: #e7ffe7;
+            color: #006600;
+        }
+
+        /* Improvement Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .metric-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Loading Spinner */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        .spinner {
+            border: 4px solid rgba(102, 126, 234, 0.1);
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Error Messages */
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: slideUp 0.3s;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideUp 0.3s;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        /* Memory Status */
+        .memory-info {
+            background: #f0e7ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .memory-info h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .memory-stat {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .score-display {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .score-details {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .btn-group {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 SEO & Citation Agent</h1>
+            <p>AI-Powered Website Analysis with Memory & Learning</p>
+        </header>
+
+        <!-- Updated: Removed Agent Status Panel - v2.1 -->
+        <div class="main-content">
+            <!-- Input Panel -->
+            <div class="card">
+                <h2>📝 Analyze Website</h2>
+                
+                <div class="input-group">
+                    <label for="websiteUrl">Website URL</label>
+                    <input 
+                        type="text" 
+                        id="websiteUrl" 
+                        placeholder="https://example.com"
+                        value="https://www.example.com"
+                    >
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="simulateImprovement">
+                    <label for="simulateImprovement" style="margin: 0;">Simulate ranking improvements</label>
+                </div>
+
+                <div class="input-group" id="daysGroup" style="display: none;">
+                    <label for="improvementDays">Days to simulate</label>
+                    <input 
+                        type="number" 
+                        id="improvementDays" 
+                        min="1" 
+                        max="30" 
+                        value="5"
+                    >
+                </div>
+
+                <div class="btn-group">
+                    <button onclick="analyzeWebsite()">🔍 Analyze</button>
+                    <button class="btn-secondary" onclick="getMemoryStatus()">📊 Memory</button>
+                </div>
+
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">🧠 How It Works</h3>
+                    <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                        <li>Extracts SEO metrics from your website</li>
+                        <li>Checks past analyses for patterns</li>
+                        <li>Uses AI to generate recommendations</li>
+                        <li>Stores everything in memory</li>
+                        <li>Learns and improves over time</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="resultsSection">
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="margin-top: 20px; color: #667eea; font-weight: 600;">Analyzing website...</p>
+            </div>
+
+            <div id="resultsContent" style="display: none;">
+                <!-- Score Display -->
+                <div class="score-display">
+                    <div class="score-circle" id="scoreCircle">--</div>
+                    <div class="score-details">
+                        <p><strong>Website:</strong> <span id="resultUrl"></span></p>
+                        <p><strong>Title:</strong> <span id="resultTitle"></span></p>
+                        <p><strong>Meta Description:</strong> <span id="resultMeta"></span></p>
+                        <p><strong>Status:</strong> <span id="resultStatus" style="color: #28a745;">✅ Analyzed</span></p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('overview')">📊 Overview</button>
+                    <button class="tab-btn" onclick="switchTab('issues')">⚠️ Issues</button>
+                    <button class="tab-btn" onclick="switchTab('recommendations')">💡 Recommendations</button>
+                    <button class="tab-btn" onclick="switchTab('memory')">🧠 Memory</button>
+                    <button class="tab-btn" onclick="switchTab('improvements')">📈 Improvements</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div class="tab-content active" id="tab-overview">
+                    <div class="metrics-grid" id="metricsGrid"></div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <h3 style="color: #667eea; margin-bottom: 15px;">Page Structure</h3>
+                            <p><strong>Images:</strong> <span id="imageCount">0</span></p>
+                            <p><strong>Internal Links:</strong> <span id="internalLinks">0</span></p>
+                            <p><strong>External Links:</strong> <span id="externalLinks">0</span></p>
+                        </div>
+                        <div>
+                            <h3 style="color: #667eea; margin-bottom: 15px;">Score Breakdown</h3>
+                            <ul id="scoreBreakdown" style="list-style: none;"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issues Tab -->
+                <div class="tab-content" id="tab-issues">
+                    <h3 style="color: #dc3545; margin-bottom: 20px;">Found Issues</h3>
+                    <ul class="issues-list" id="issuesList"></ul>
+                </div>
+
+                <!-- Recommendations Tab -->
+                <div class="tab-content" id="tab-recommendations">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">AI Recommendations</h3>
+                    <div id="recommendationsList"></div>
+                </div>
+
+                <!-- Memory Tab -->
+                <div class="tab-content" id="tab-memory">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">🧠 Agent's Memory</h3>
+                    <div id="memoryContent"></div>
+                </div>
+
+                <!-- Improvements Tab -->
+                <div class="tab-content" id="tab-improvements">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">📈 Performance Improvements</h3>
+                    <div id="improvementsContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>🚀 SEO & Citation Agent v1.0 | Powered by Groq LLM & Hindsight Memory | Built for intelligent SEO automation</p>
+        </footer>
+    </div>
+
+    <script>
+        const API_URL = "http://localhost:8000";
+
+        // Function to simplify complex recommendations
+        function simplifyRecommendation(text) {
+            const simplified = {
+                title: "",
+                problem: "",
+                why: "",
+                action: "",
+                impact: ""
+            };
+
+            // Extract title from first line
+            let lines = text.split('\n').filter(l => l.trim());
+            simplified.title = lines[0]?.substring(0, 80) || "SEO Improvement";
+
+            // Parse based on keywords
+            const lower = text.toLowerCase();
+            
+            // Schema Markup
+            if (lower.includes('schema') || lower.includes('structured data')) {
+                simplified.title = "Add Schema Markup";
+                simplified.problem = "Your website is missing structured data (JSON-LD). Search engines can't fully understand your content.";
+                simplified.why = "Schema markup helps Google show rich snippets (ratings ⭐, prices 💰, etc.) in search results. This increases clicks by 20-30%.";
+                simplified.action = "Add JSON-LD schema code to your homepage and important pages. (For developers: Use schema.org markup)";
+                simplified.impact = "+12 to +15 points. 25% more clicks from search results.";
+            }
+            // Meta Description
+            else if (lower.includes('meta description') || lower.includes('meta desc')) {
+                simplified.title = "Write Meta Description";
+                simplified.problem = "Your meta description is missing or too short. People don't know what your page is about.";
+                simplified.why = "Meta descriptions show under your title in Google results. A good one makes users click on YOUR result instead of competitors.";
+                simplified.action = "Write 120-160 characters describing your page. Include your main keyword. Add it in your HTML head: <meta name='description' content='....'>";
+                simplified.impact = "+8 points. 15-20% more clicks from search.";
+            }
+            // Title Tag
+            else if (lower.includes('title') && (lower.includes('tag') || lower.includes('short') || lower.includes('char'))) {
+                simplified.title = "Improve Page Title";
+                simplified.problem = "Your title is too short or doesn't include keywords. Google doesn't know what your page is about.";
+                simplified.why = "Page titles are the #1 ranking factor. A good title with keywords helps you rank higher AND get more clicks.";
+                simplified.action = "Change your title to 50-60 characters. Include your main keyword. Make it descriptive but clickable.";
+                simplified.impact = "+5 to +8 points. Better ranking for your keywords.";
+            }
+            // Page Speed
+            else if (lower.includes('speed') || lower.includes('slow') || lower.includes('performance')) {
+                simplified.title = "Speed Up Your Website";
+                simplified.problem = "Your website loads slowly. Users wait too long and leave.";
+                simplified.why = "Google ranks fast websites higher. Users also click on faster sites. Every 1 second delay = 7% fewer conversions.";
+                simplified.action = "Compress images (smaller file size), minimize CSS/JavaScript, enable caching. Use Google PageSpeed Insights for specific tips.";
+                simplified.impact = "+12 to +15 points. Faster rankings. More user engagement.";
+            }
+            // Images
+            else if (lower.includes('image') || lower.includes('alt text') || lower.includes('alt tag')) {
+                simplified.title = "Add Image Alt Text";
+                simplified.problem = "Images don't have descriptions (alt text). Search engines can't understand them.";
+                simplified.why = "Alt text helps Google understand images. Visually impaired users also benefit. Improves SEO for image search.";
+                simplified.action = "For each image, add alt text: <img src='photo.jpg' alt='clear description of what's in the image'>";
+                simplified.impact = "+3 to +5 points. Shows in Google Images. Better accessibility.";
+            }
+            // Headings
+            else if (lower.includes('heading') || lower.includes('h1') || lower.includes('h2')) {
+                simplified.title = "Fix Page Headings";
+                simplified.problem = "Your heading structure is unclear. Search engines can't understand your content organization.";
+                simplified.why = "Headings tell Google what your content is about. They help users scan your page quickly too.";
+                simplified.action = "Use ONE H1 tag per page (your main title). Use H2, H3 for subsections. Go in order (don't skip levels).";
+                simplified.impact = "+2 to +4 points. Better clarity for search engines and users.";
+            }
+            // Links
+            else if (lower.includes('link') || lower.includes('internal') || lower.includes('external')) {
+                simplified.title = "Improve Internal Links";
+                simplified.problem = "Your pages aren't connected well. Visitors can't easily find related content.";
+                simplified.why = "Internal links help Google understand your site structure. They also keep visitors on your site longer (better rankings).";
+                simplified.action = "Link related articles together. Use descriptive anchor text (not 'click here'). Helps distribute page authority.";
+                simplified.impact = "+4 to +6 points. Better user experience. Higher rankings.";
+            }
+            // Mobile
+            else if (lower.includes('mobile') || lower.includes('responsive')) {
+                simplified.title = "Mobile Optimization";
+                simplified.problem = "Your website doesn't work well on phones. Mobile users have a bad experience.";
+                simplified.why = "Google prioritizes mobile-friendly sites. 60% of traffic is from phones. Bad mobile = lower rankings AND fewer customers.";
+                simplified.action = "Use responsive design. Test on iPhone/Android. Make buttons large. Ensure text is readable without zooming.";
+                simplified.impact = "+5 to +8 points. 60% of web traffic is mobile.";
+            }
+            // Default fallback
+            else {
+                simplified.problem = text.substring(0, 150) + "...";
+                simplified.why = "This improvement will help search engines understand your site better.";
+                simplified.action = "Implement this recommendation to improve your SEO score.";
+                simplified.impact = "+3 to +5 points depending on implementation.";
+            }
+
+            return simplified;
+        }
+
+        // Toggle improvement days input
+        document.getElementById("simulateImprovement").addEventListener("change", function() {
+            document.getElementById("daysGroup").style.display = this.checked ? "block" : "none";
+        });
+
+        async function analyzeWebsite() {
+            const url = document.getElementById("websiteUrl").value.trim();
+            const simulateImprovement = document.getElementById("simulateImprovement").checked;
+            const improvementDays = parseInt(document.getElementById("improvementDays").value) || 5;
+
+            if (!url) {
+                showError("Please enter a website URL");
+                return;
+            }
+
+            // Validate URL format
+            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                document.getElementById("websiteUrl").value = "https://" + url;
+            }
+
+            showLoading(true);
+            hideError();
+
+            try {
+                const response = await fetch(`${API_URL}/api/analyze`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        website_url: document.getElementById("websiteUrl").value,
+                        simulate_improvement: simulateImprovement,
+                        improvement_days: improvementDays
+                    })
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.detail || "Analysis failed");
+                }
+
+                const result = await response.json();
+                console.log("✅ API Response received:", result);
+                displayResults(result);
+                showSuccess("Analysis completed successfully!");
+            } catch (error) {
+                console.error("❌ Error during analysis:", error);
+                showError(`Error: ${error.message}`);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function displayResults(result) {
+            // Show results section
+            document.getElementById("resultsSection").classList.add("show");
+            document.getElementById("resultsContent").style.display = "block";
+
+            // Update score
+            const score = result.seo_score || 0;
+            document.getElementById("scoreCircle").textContent = Math.round(score);
+            document.getElementById("scoreCircle").style.background = getScoreColor(score);
+
+            // Basic info
+            document.getElementById("resultUrl").textContent = result.website_url;
+            document.getElementById("resultTitle").textContent = result.analysis?.title || "N/A";
+            document.getElementById("resultMeta").textContent = (result.analysis?.meta_description || "N/A").substring(0, 50);
+
+            // Images
+            document.getElementById("imageCount").textContent = result.analysis?.images_count || 0;
+            document.getElementById("internalLinks").textContent = result.analysis?.links?.internal || 0;
+            document.getElementById("externalLinks").textContent = result.analysis?.links?.external || 0;
+
+            // Metrics
+            const metricsGrid = document.getElementById("metricsGrid");
+            metricsGrid.innerHTML = `
+                <div class="metric-box">
+                    <div class="metric-label">SEO Score</div>
+                    <div class="metric-value">${Math.round(score)}/100</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Issues Found</div>
+                    <div class="metric-value">${result.issues_found?.length || 0}</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Recommendations</div>
+                    <div class="metric-value">${result.recommendations?.length || 0}</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Analyses Done</div>
+                    <div class="metric-value">${result.learning_insights?.analyses_performed || 1}</div>
+                </div>
+            `;
+
+            // Score breakdown
+            const breakdown = result.score_breakdown || {};
+            const breakdownList = document.getElementById("scoreBreakdown");
+            breakdownList.innerHTML = Object.entries(breakdown)
+                .map(([key, value]) => `<li>${key}: ${Math.round(value * 100)}%</li>`)
+                .join("");
+
+            // Issues - SIMPLIFIED
+            const issuesList = document.getElementById("issuesList");
+            if ((result.issues_found || []).length > 0) {
+                issuesList.innerHTML = (result.issues_found || []).map((issue, idx) => `
+                    <li style="
+                        background: #fff3cd;
+                        border-left: 4px solid #ffc107;
+                        padding: 15px;
+                        margin-bottom: 10px;
+                        border-radius: 4px;
+                        color: #333;
+                    ">
+                        <strong style="color: #ff6b6b; font-size: 1.05em;">❌ ${issue}</strong>
+                    </li>
+                `).join("");
+            } else {
+                issuesList.innerHTML = "<li style='color: #28a745; font-size: 1.1em;'>✅ Great! No major issues found!</li>";
+            }
+
+            // Recommendations - SIMPLIFIED FORMAT
+            const recList = document.getElementById("recommendationsList");
+            let recHTML = "";
+            
+            if ((result.recommendations || []).length > 0) {
+                recHTML = (result.recommendations || []).map((rec, index) => {
+                    // Extract simple text if it's a complex object
+                    let problem = rec.text || rec;
+                    let simplified = simplifyRecommendation(problem);
+                    
+                    return `
+                        <div class="simple-recommendation" style="
+                            background: #f8f9fa;
+                            border-left: 4px solid #667eea;
+                            padding: 20px;
+                            margin-bottom: 15px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                        " onmouseover="this.style.boxShadow='0 4px 12px rgba(102,126,234,0.3)'" onmouseout="this.style.boxShadow='none'">
+                            <div style="display: flex; justify-content: space-between; align-items: start;">
+                                <div style="flex: 1;">
+                                    <div style="
+                                        font-weight: 600;
+                                        color: #333;
+                                        font-size: 1.1em;
+                                        margin-bottom: 8px;
+                                    ">${index + 1}. ${simplified.title}</div>
+                                    
+                                    <div style="color: #666; margin: 12px 0; line-height: 1.6;">
+                                        <strong style="color: #667eea;">Problem:</strong> ${simplified.problem}
+                                    </div>
+                                    
+                                    <div style="color: #666; margin: 12px 0; line-height: 1.6;">
+                                        <strong style="color: #667eea;">Why it matters:</strong> ${simplified.why}
+                                    </div>
+                                    
+                                    <div style="color: #666; margin: 12px 0; line-height: 1.6;">
+                                        <strong style="color: #667eea;">What to do:</strong> ${simplified.action}
+                                    </div>
+                                    
+                                    <div style="background: #e7f3ff; padding: 10px; border-radius: 4px; margin-top: 12px; color: #004085;">
+                                        <strong>💡 Impact:</strong> ${simplified.impact}
+                                    </div>
+                                </div>
+                                <div style="
+                                    background: ${rec.type === 'llm_generated' ? '#ffc107' : '#17a2b8'};
+                                    color: white;
+                                    padding: 4px 12px;
+                                    border-radius: 20px;
+                                    font-size: 0.8em;
+                                    font-weight: 600;
+                                    white-space: nowrap;
+                                    margin-left: 15px;
+                                ">
+                                    ${rec.type === 'llm_generated' ? '🤖 AI' : '📊 Analysis'}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join("");
+            } else {
+                recHTML = "<p style='color: #666; text-align: center; padding: 20px;'>No recommendations available</p>";
+            }
+            recList.innerHTML = recHTML;
+
+            // Improvements
+            const improv = result.improvement_metrics || {};
+            document.getElementById("improvementsContent").innerHTML = `
+                <div class="metrics-grid">
+                    <div class="metric-box">
+                        <div class="metric-label">Improvement</div>
+                        <div class="metric-value">${improv.improvement_percentage || 0}%</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Keywords Improved</div>
+                        <div class="metric-value">${improv.keywords_improved || 0}</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Analysis Days</div>
+                        <div class="metric-value">${improv.days_analyzed || 0}</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Current Score</div>
+                        <div class="metric-value">${Math.round(improv.current_score || score)}</div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; color: #666;">
+                    ${improv.improvement_points > 0 
+                        ? `✅ Your website has improved by ${improv.improvement_points} points!` 
+                        : "Keep implementing recommendations to see improvements"}
+                </p>
+            `;
+
+            // Memory info
+            document.getElementById("memoryContent").innerHTML = `
+                <div class="memory-info">
+                    <h3>Hindsight Memory Status</h3>
+                    <div class="memory-stat">
+                        <span>Total Analyses:</span>
+                        <strong>${result.learning_insights?.analyses_performed || 1}</strong>
+                    </div>
+                    <div class="memory-stat">
+                        <span>Effective Suggestions:</span>
+                        <strong>${result.learning_insights?.effective_suggestions || 0}</strong>
+                    </div>
+                    <div class="memory-stat">
+                        <span>Learning Status:</span>
+                        <strong>✅ Active</strong>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: #666;">
+                    The agent stores this analysis and uses it to improve future recommendations. 
+                    Each new analysis builds on past learnings!
+                </p>
+            `;
+
+            // Show simulated improvements if applicable
+            if (result.simulated_improvements) {
+                const sim = result.simulated_improvements;
+                const keyImprovements = Object.keys(sim.keywords_improved)
+                    .map(kw => {
+                        const data = sim.keywords_improved[kw];
+                        return `<li>${kw}: Rank ${data.initial_rank} → ${data.current_rank} (↑${data.improvement} positions)</li>`;
+                    })
+                    .join("");
+                
+                document.getElementById("improvementsContent").innerHTML += `
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                        <h3 style="color: #28a745; margin-bottom: 15px;">Simulated Rankings (${sim.days_simulated} days)</h3>
+                        <ul style="list-style: none;">
+                            ${keyImprovements}
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+
+        function getScoreColor(score) {
+            if (score >= 80) return "linear-gradient(135deg, #28a745 0%, #20c997 100%)";
+            if (score >= 60) return "linear-gradient(135deg, #ffc107 0%, #fd7e14 100%)";
+            return "linear-gradient(135deg, #dc3545 0%, #c82333 100%)";
+        }
+
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll(".tab-content").forEach(tab => {
+                tab.classList.remove("active");
+            });
+            document.querySelectorAll(".tab-btn").forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            // Show selected tab
+            document.getElementById(`tab-${tabName}`).classList.add("active");
+            event.target.classList.add("active");
+        }
+
+        async function getMemoryStatus() {
+            const url = document.getElementById("websiteUrl").value.trim();
+            if (!url) {
+                showError("Please enter a website URL");
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/api/memory/${encodeURIComponent(url)}`);
+                const result = await response.json();
+                
+                console.log("✅ Memory Status:", result);
+                
+                const analyses = result.analyses_performed || 0;
+                const suggestions = result.suggestions_made || 0;
+                const improvement = result.improvement_metrics?.improvement_percentage || 0;
+                const initialScore = result.improvement_metrics?.initial_score || 0;
+                const currentScore = result.improvement_metrics?.current_score || 0;
+                
+                if (analyses === 0) {
+                    alert(`Memory Status:\n\nNo previous analyses found.\nAnalyze this website first to build memory!`);
+                } else {
+                    alert(`Memory Status:\n\nAnalyses Performed: ${analyses}\nSuggestions Made: ${suggestions}\nImprovement: ${improvement}%\n\nInitial Score: ${initialScore}/100\nCurrent Score: ${currentScore}/100`);
+                }
+            } catch (error) {
+                console.error("❌ Memory Error:", error);
+                showError(`Error loading memory: ${error.message}`);
+            }
+        }
+
+        function showLoading(show) {
+            document.getElementById("loading").classList.toggle("show", show);
+            if (show) {
+                document.getElementById("resultsContent").style.display = "none";
+            }
+        }
+
+        function showError(message) {
+            const elem = document.getElementById("errorMessage");
+            elem.textContent = message;
+            elem.classList.add("show");
+        }
+
+        function hideError() {
+            document.getElementById("errorMessage").classList.remove("show");
+        }
+
+        function showSuccess(message) {
+            const elem = document.getElementById("successMessage");
+            elem.textContent = message;
+            elem.classList.add("show");
+            setTimeout(() => elem.classList.remove("show"), 3000);
+        }
+
+        // Check API on load
+        document.addEventListener("DOMContentLoaded", async function() {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log("✅ API connected:", data);
+                }
+            } catch (error) {
+                console.error("⚠️ API not reachable. Make sure backend is running on port 8000");
+            }
+        });
+    </script>
+</body>
+</html>

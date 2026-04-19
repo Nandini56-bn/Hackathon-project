@@ -1,0 +1,39 @@
+{
+  "https://www.instagram.com": {
+    "seo": [
+      {
+        "timestamp": "2026-04-18T19:00:25.575550",
+        "rank": 35,
+        "search_volume": 13000
+      }
+    ],
+    "optimization": [
+      {
+        "timestamp": "2026-04-18T19:00:25.622807",
+        "rank": 22,
+        "search_volume": 22000
+      }
+    ],
+    "keywords": [
+      {
+        "timestamp": "2026-04-18T19:00:25.654014",
+        "rank": 18,
+        "search_volume": 18000
+      }
+    ],
+    "content": [
+      {
+        "timestamp": "2026-04-18T19:00:25.689550",
+        "rank": 50,
+        "search_volume": 17000
+      }
+    ],
+    "ranking": [
+      {
+        "timestamp": "2026-04-18T19:00:25.717318",
+        "rank": 41,
+        "search_volume": 17000
+      }
+    ]
+  }
+}
