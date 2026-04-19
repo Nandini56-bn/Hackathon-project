@@ -9,7 +9,7 @@ To get the project up and running quickly:
 
 Clone the repository:
 Bash
-git clone https://github.com/your-username/seo_agent.git
+git clone https://github.com/Nandini56-bn/Hackathon-project.git
 cd seo_agent-main
 Run the setup script:
 
